@@ -89,7 +89,7 @@ class ReceiveSharingIntentPlugin : FlutterPlugin, ActivityAware, MethodCallHandl
         @JvmStatic
         fun registerWith(registrar: PluginRegistry.Registrar) {
             val instance = ReceiveSharingIntentPlugin()
-            instance.applicationContext = registrar.context()
+            instance.applicationContext = registrar.activeContext()
             instance.setupCallbackChannels(registrar.messenger())
         }
     }
