@@ -17,7 +17,7 @@ import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
-import io.flutter.plugin.common.PluginRegistry.NewIntentListener
+io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding.OnNewIntentListener
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
@@ -28,8 +28,8 @@ private const val MESSAGES_CHANNEL = "receive_sharing_intent/messages"
 private const val EVENTS_CHANNEL_MEDIA = "receive_sharing_intent/events-media"
 private const val EVENTS_CHANNEL_TEXT = "receive_sharing_intent/events-text"
 
-class ReceiveSharingIntentPlugin : FlutterPlugin, ActivityAware, MethodCallHandler,
-        EventChannel.StreamHandler, NewIntentListener {
+class ReceiveSharingIntentPlugin : FlutterPlugin, ActivityAware, MethodCallHandler, EventChannel.StreamHandler, 
+  OnNewIntentListener {
 
     private var initialMedia: JSONArray? = null
     private var latestMedia: JSONArray? = null
